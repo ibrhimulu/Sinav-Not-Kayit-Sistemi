@@ -1,0 +1,65 @@
+﻿@model List<NotModel>
+@{
+    ViewData["Title"] = "Dersi Alan Öğrenciler";
+}
+
+
+<div class="rov">
+    <div class="col">
+        <h1 class="display-4">@ViewData["Title"]</h1>
+        <hr />
+    </div>
+</div>
+
+<div class="row mb-3">
+    <div class="col">
+        <a asp-action="Create" class="btn btn-primary btn-sm"><i class="fa fa-plus me-2"></i>Yeni Not</a>
+    </div>
+</div>
+
+<div class="row mb-3">
+    <div class="col">
+        <table class="table table-hover table-sm">
+            <thead>
+                <tr>
+                    <th>Kullanıcı Adı</th>
+                    <th>Ders Adı</th>
+                    <th>Sınav 1</th>
+                    <th>Sınav 2</th>
+                    <th>Sınav 3</th>
+                    <th>Ortalama</th>
+                    <th>Durum</th>
+                    <th></th>
+
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (NotModel not in Model)
+                {
+                    <tr>
+                        <td>@not.Username</td>
+                        <td>@not.DersAd</td>
+                        <td>@not.Sınav1</td>
+                        <td>@not.Sınav2</td>
+                        <td>@not.Sınav3</td>
+                        <td>@not.Ortalama</td>
+                        <td>
+                            @if (not.Durum)
+                            {
+                                <i class="fa fa-check text-success"></i>
+                            }
+                            else
+                            {
+                                <i class="fa fa-times text-danger"></i>
+                            }
+                        </td>
+                        <td> <a asp-action="Edit" asp-route-id="@not.NotId" class="btn btn-info btn-sm text-white"><i class="fa fa-edit me-2"></i>Düzenle</a>
+                            </td>
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

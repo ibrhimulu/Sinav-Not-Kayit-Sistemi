@@ -1,0 +1,68 @@
+﻿@model EditNotModel
+@{
+    ViewData["Title"] = "Kullanıcı Düzenle";
+}
+
+<div class="row">
+    <div class="col-4 offset-4"> 
+        <h1 class="display-4 border-bottom text-center pb-2">@ViewData["Title"]</h1>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-4 offset-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger small"></div> @* hata mesajı *@
+
+            <div class="form-group mb-3">
+                <label asp-for="NotId" class="form-label">Not Id</label>
+                <input asp-for="NotId" class="form-control" placeholder="Not Id" />
+                <span asp-validation-for="NotId" class="text-danger small"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="UserId" class="form-label">User Id</label>
+                <input asp-for="UserId" class="form-control" placeholder="User Id" />
+                <span asp-validation-for="UserId" class="text-danger small"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="DersId" class="form-label">Ders Id</label>
+                <input asp-for="DersId" class="form-control" placeholder="Ders Id" />
+                <span asp-validation-for="DersId" class="text-danger small"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Sınav1" class="form-label">Sınav 1</label>
+                <input asp-for="Sınav1" class="form-control" placeholder="Sınav 1" />
+                <span asp-validation-for="Sınav1" class="text-danger small"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Sınav2" class="form-label">Sınav 2</label>
+                <input asp-for="Sınav2" class="form-control" placeholder="Sınav 2" />
+                <span asp-validation-for="Sınav2" class="text-danger small"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Sınav3" class="form-label">Sınav 3</label>
+                <input asp-for="Sınav3" class="form-control" placeholder="Sınav 3" />
+                <span asp-validation-for="Sınav3" class="text-danger small"></span>
+            </div>
+
+            
+
+            @* <div class="form-group mb-3">
+                <div class="form-check">
+                    <input asp-for="Durum" type="checkbox" class="form-check-input">
+                     <label asp-for="Durum" class="form-check-label">
+                         Geçti</label>
+                </div>
+            </div> *@
+
+            <div class="form-group mb-3">
+                <button type="submit" class="btn btn-primary"><i class="fa-solid fa-save me-2"></i>Kaydet</button>
+            </div>
+        </form>          
+    </div>
+</div>

@@ -1,0 +1,35 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+
+
+body {
+    margin-bottom: 60px;
+    background-image: url('../uploads/school2.jpg');
+}
+
+.validation-summary-errors{
+    border: 1px solid red;
+    background-color:red;
+    padding: 5px;
+    border-radius: 20px;
+    width: 26rem;
+}
+
+.validation-summary-errors ul {
+        list-style-type:none;
+        color:#fff;
+        text-align:center;
+    }

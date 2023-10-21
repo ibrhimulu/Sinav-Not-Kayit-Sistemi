@@ -1,0 +1,65 @@
+﻿@model CreateUserModel
+@{
+    ViewData["Title"] = "Kullanıcı Oluştur";
+}
+
+<div class="row">
+    <div class="col-4 offset-4"> 
+        <h1 class="display-4 border-bottom text-center pb-2">@ViewData["Title"]</h1>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-4 offset-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger small"></div> @* hata mesajı *@
+
+            <div class="form-group mb-3">
+                <label asp-for="NameSurname" class="form-label">Ad Soyad</label>
+                <input asp-for="NameSurname" class="form-control" placeholder="Ad Soyad" />
+                <span asp-validation-for="NameSurname" class="text-danger small"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Username" class="form-label">Kullanıcı Adı</label>
+                <input asp-for="Username" class="form-control" placeholder="Kullanıcı Adı" />
+                <span asp-validation-for="Username" class="text-danger small"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Password" class="form-label">Şifre</label>
+                <input asp-for="Password" type="password" class="form-control"  placeholder="******" />
+                <span asp-validation-for="Password" class="text-danger small"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="RePassword" class="form-label">Şifre Tekrar</label>
+                <input asp-for="RePassword" type="password" class="form-control" placeholder="******" />
+                <span asp-validation-for="RePassword" class="text-danger small"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="RolId" class="form-label">Rol</label>
+                <select asp-for="RolId" class="form-select">
+                    <option >Lütfen Seçin</option>
+                    <option value="1">Öğrenci</option>
+                    <option value="2">Admin</option>
+                    <option value="3">Profesör</option>
+                </select>
+                <span asp-validation-for="RolId" class="text-danger small"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <div class="form-check">
+                    <input asp-for="Locked" type="checkbox" class="form-check-input">
+                     <label asp-for="Locked" class="form-check-label">
+                         Locked</label>
+                </div>
+            </div>
+
+            <div class="form-group mb-3">
+                <button type="submit" class="btn btn-primary"><i class="fa-solid fa-save me-2"></i>Kaydet</button>
+            </div>
+        </form>          
+    </div>
+</div>

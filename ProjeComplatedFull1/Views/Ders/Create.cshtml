@@ -1,0 +1,30 @@
+﻿@model CreateDersModel
+@{
+    ViewData["Title"] = "Ders Oluştur";
+}
+
+<div class="row">
+    <div class="col-4 offset-4"> 
+        <h1 class="display-4 border-bottom text-center pb-2">@ViewData["Title"]</h1>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-4 offset-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger small"></div> @* hata mesajı *@
+
+            <div class="form-group mb-3">
+                <label asp-for="DersAd" class="form-label">Ders Adı</label>
+                <input asp-for="DersAd" class="form-control" placeholder="Ders Adı" />
+                <span asp-validation-for="DersAd" class="text-danger small"></span>
+            </div>
+
+           
+
+            <div class="form-group mb-3">
+                <button type="submit" class="btn btn-primary"><i class="fa-solid fa-save me-2"></i>Kaydet</button>
+            </div>
+        </form>          
+    </div>
+</div>

@@ -1,0 +1,26 @@
+﻿@* @model ProjeComplatedFull1.Models.NotModel
+
+<h2>Kullanıcının Ders Programı</h2>
+
+@if (Model != null)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Ders Adı</th>
+                <th>Diğer Bilgiler</th>
+                <!-- Diğer ders programı alanlarını burada ekleyin -->
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>@Model.DersAd</td>
+                <td><!-- Diğer ders programı bilgilerini burada gösterin --></td>
+            </tr>
+        </tbody>
+    </table>
+}
+else
+{
+    <p>Kullanıcının ders programı bulunmuyor.</p>
+} *@

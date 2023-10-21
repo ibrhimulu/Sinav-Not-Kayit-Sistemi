@@ -1,0 +1,47 @@
+﻿@model List<DersModel>
+@{
+    ViewData["Title"] = "Dersler";
+}
+
+
+<div class="rov">
+    <div class="col">
+        <h1 class="display-4">@ViewData["Title"]</h1>
+        <hr />
+    </div>
+</div>
+
+<div class="row mb-3">
+    <div class="col">
+        <a asp-action="Create" class="btn btn-primary btn-sm"><i class="fa fa-plus me-2"></i>Yeni Ders</a>
+    </div>
+</div>
+
+<div class="row mb-3">
+    <div class="col">
+        <table class="table table-hover table-sm">
+            <thead>
+                <tr>
+                    <th>Ders Id</th>
+                    <th>Ders Adı</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (DersModel ders in Model)
+                {
+                    <tr>
+                        <td>@ders.DersId</td>
+                        <td>@ders.DersAd</td>
+                       
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@ders.DersId" class="btn btn-info btn-sm text-white"><i class="fa fa-edit me-2"></i>Düzenle</a>
+                            
+
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
